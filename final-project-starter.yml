@@ -1,0 +1,14 @@
+Parameters:
+Resources:
+  ProfileWithRolesForOurApp:
+    Type: AWS::IAM::InstanceProfile
+    Properties: 
+      Roles:
+        - UdacityS3ReadOnlyEC2
+Outputs: 
+          !/bin/bash
+          apt-get update -y
+          apt-get install apache2 -y
+          systemctl start apache2.service
+          cd /var/www/html
+          echo "Welcome Muthuraaman - Udacity Demo Web Server Up and Running!" > index.html
